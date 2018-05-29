@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击关闭浮层</title>
+    <style>
+        .wrapper{
+            position: relative;
+            display: inline-block;
+        }
+        .popover {
+            border: 2px solid red;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            white-space: nowrap;
+            padding: 10px;
+            margin-left: 10px;
+            background: white;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <button id="clickMe">点击</button>
+        <div id= "popover" class="popover">浮层
+            <input type="checkbox" name="勾选我" id="checkMe">
+        </div>
+    </div>
+    <script>
+        clickMe.addEventListener('click',function(e){
+            popover.style.display = 'block';
+        })
+        wrapper.addEventListener('click',function(e){
+            e.stopPropagation();
+        })
+        document.addEventListener('click',function(e){
+            popover.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
