@@ -21,6 +21,9 @@
             background: white;
             display: none;
         }
+        .popover.active{
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -32,13 +35,13 @@
     </div>
     <script>
         clickMe.addEventListener('click',function(e){
-            popover.style.display = 'block';
+            popover.classList.toggle('active');
         })
         wrapper.addEventListener('click',function(e){
             e.stopPropagation();
         })
         document.addEventListener('click',function(e){
-            popover.style.display = 'none';
+            popover.classList.remove('active');
         })
     </script>
 </body>
