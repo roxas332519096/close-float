@@ -33,16 +33,26 @@
             <input type="checkbox" name="勾选我" id="checkMe">
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        clickMe.addEventListener('click',function(e){
-            popover.classList.toggle('active');
-        })
-        wrapper.addEventListener('click',function(e){
-            e.stopPropagation();
-        })
-        document.addEventListener('click',function(e){
-            popover.classList.remove('active');
-        })
+        // clickMe.addEventListener('click',function(e){
+        //     popover.classList.toggle('active');
+        // })
+        // wrapper.addEventListener('click',function(e){
+        //     e.stopPropagation();
+        // })
+        // document.addEventListener('click',function(e){
+        //     popover.classList.remove('active');
+        // })
+     $('#clickMe').on('click',function(e){
+         $('.popover').toggleClass('active');
+     })
+     $('#wrapper').on('click',function(e){
+         e.stopPropagation();
+     })
+     $(document).on('click',function(e){
+         $('.popover').removeClass('active');
+     })
     </script>
 </body>
 </html>
